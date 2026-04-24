@@ -33,14 +33,17 @@ const PortafolioBarbaraBarra = () => {
       <nav className="fixed top-0 w-full bg-black/80 backdrop-blur-md border-b border-purple-500/20 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center">
-                <span className="text-lg font-bold">🐱</span>
-              </div>
-              <span className="text-lg font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                BB
-              </span>
-            </motion.div>
+          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-3">
+  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 p-[2px] flex items-center justify-center shadow-lg shadow-purple-500/50">
+    <div className="w-full h-full rounded-full bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
+  <img 
+    src={new URL('./assets/logo3.svg', import.meta.url).href}
+    alt="Logo" 
+    className="w-10 h-10 object-contain"
+  />
+</div>
+  </div>
+</motion.div>
 
             <div className="hidden md:flex gap-8">
               {['inicio', 'sobre-mi', 'proyectos', 'skills', 'contacto'].map((item) => (
@@ -80,8 +83,14 @@ const PortafolioBarbaraBarra = () => {
       <section id="inicio" className="relative min-h-screen flex items-center justify-center px-4 pt-16">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="text-center z-10">
           <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity }} className="flex justify-center mb-8">
-            <div className="relative w-32 h-32 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-[2px] shadow-2xl shadow-purple-500/50">
-              <div className="w-full h-full rounded-full bg-black flex items-center justify-center text-6xl">🐱</div>
+            <div className="relative w-48 h-48 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-[2px] shadow-2xl shadow-purple-500/50">
+             <div className="w-full h-full rounded-full bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
+  <img 
+  src={new URL('./assets/logo3.svg', import.meta.url).href}
+  alt="Logo" 
+  className="w-full h-full object-contain p-4"
+/>
+</div>
             </div>
           </motion.div>
 
@@ -137,26 +146,39 @@ const PortafolioBarbaraBarra = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Foto */}
+            <motion.div {...fadeInUp} className="flex justify-center">
+              <div className="relative w-80 h-96 rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-[3px] shadow-2xl shadow-purple-500/50">
+                <div className="w-full h-full rounded-lg bg-black overflow-hidden">
+                  <img 
+                    src={new URL('./assets/barbara.png', import.meta.url).href}
+                    alt="Bárbara Barraza" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </motion.div>
+
             <motion.div {...fadeInUp} className="space-y-4 text-gray-300 text-lg leading-relaxed">
               <p>Soy una ingeniera informática apasionada por la tecnología y la optimización de procesos. Mi experiencia se centra en análisis de datos, implementación de soluciones SAP y automatización de flujos de trabajo empresariales.</p>
               <p>Me destaca mi capacidad para entender problemas complejos y diseñar soluciones elegantes que generan impacto real en las organizaciones. Disfruto trabajar en equipo y compartir conocimiento con mis colegas.</p>
-            </motion.div>
 
-            <motion.div {...fadeInUp} className="space-y-6">
-              <div className="p-6 border border-purple-500/30 rounded-lg bg-purple-900/10">
-                <h3 className="text-purple-400 font-semibold mb-3">📊 Especialidades</h3>
-                <ul className="space-y-2 text-gray-300">
-                  <li>✓ Análisis de Datos</li>
-                  <li>✓ Optimización de Procesos SAP</li>
-                  <li>✓ Automatización de Flujos</li>
-                  <li>✓ Business Intelligence</li>
-                </ul>
-              </div>
+              <div className="space-y-6 pt-4">
+                <div className="p-6 border border-purple-500/30 rounded-lg bg-purple-900/10">
+                  <h3 className="text-purple-400 font-semibold mb-3">📊 Especialidades</h3>
+                  <ul className="space-y-2 text-gray-300">
+                    <li>✓ Análisis de Datos</li>
+                    <li>✓ Optimización de Procesos SAP</li>
+                    <li>✓ Automatización de Flujos</li>
+                    <li>✓ Business Intelligence</li>
+                  </ul>
+                </div>
 
-              <div className="p-6 border border-cyan-500/30 rounded-lg bg-cyan-900/10">
-                <h3 className="text-cyan-400 font-semibold mb-3">🎓 Formación</h3>
-                <p className="text-gray-300">Ingeniera Informática</p>
-                <p className="text-gray-400 text-sm">Titulación completada con distinción</p>
+                <div className="p-6 border border-cyan-500/30 rounded-lg bg-cyan-900/10">
+                  <h3 className="text-cyan-400 font-semibold mb-3">🎓 Formación</h3>
+                  <p className="text-gray-300">Ingeniera Informática</p>
+                  <p className="text-gray-400 text-sm">Titulación completada con distinción</p>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -311,9 +333,13 @@ const PortafolioBarbaraBarra = () => {
 
           <motion.div {...fadeInUp} className="mt-16 p-8 border border-cyan-500/30 rounded-lg bg-cyan-900/10">
             <p className="text-gray-300 mb-4">¿Necesitas mi CV?</p>
-            <button className="px-6 py-3 bg-cyan-600/20 border border-cyan-500/50 rounded-lg text-cyan-300 hover:bg-cyan-600/40 transition-all font-semibold">
-              📥 Descargar CV
-            </button>
+            <a 
+  href="/cv-barbara.pdf" 
+  download
+  className="inline-block px-6 py-3 bg-cyan-600/20 border border-cyan-500/50 rounded-lg text-cyan-300 hover:bg-cyan-600/40 transition-all font-semibold"
+>
+  📥 Descargar CV
+</a>
           </motion.div>
         </div>
       </section>
