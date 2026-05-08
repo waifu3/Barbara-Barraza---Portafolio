@@ -334,7 +334,7 @@ const PortafolioBarbaraBarra = () => {
           <motion.div {...fadeInUp} className="mt-16 p-8 border border-cyan-500/30 rounded-lg bg-cyan-900/10">
             <p className="text-gray-300 mb-4">¿Necesitas mi CV?</p>
             <a 
-  href="/cv-barbara.pdf" 
+  href="/Currículum Vitae CV Bárbara Barraza.pdf" 
   download
   className="inline-block px-6 py-3 bg-cyan-600/20 border border-cyan-500/50 rounded-lg text-cyan-300 hover:bg-cyan-600/40 transition-all font-semibold"
 >
