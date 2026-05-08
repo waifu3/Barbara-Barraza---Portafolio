@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 const PortafolioBarbaraBarra = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,7 +33,7 @@ const PortafolioBarbaraBarra = () => {
       <nav className="fixed top-0 w-full bg-black/80 backdrop-blur-md border-b border-purple-500/20 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-3">
+          <Motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-3">
   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 p-[2px] flex items-center justify-center shadow-lg shadow-purple-500/50">
     <div className="w-full h-full rounded-full bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
   <img 
@@ -43,18 +43,18 @@ const PortafolioBarbaraBarra = () => {
   />
 </div>
   </div>
-</motion.div>
+</Motion.div>
 
             <div className="hidden md:flex gap-8">
               {['inicio', 'sobre-mi', 'proyectos', 'skills', 'contacto'].map((item) => (
-                <motion.button
+                <Motion.button
                   key={item}
                   onClick={() => scrollToSection(item)}
                   className="text-gray-300 hover:text-white capitalize text-sm font-medium transition-colors duration-300 hover:text-cyan-400"
                   whileHover={{ scale: 1.05 }}
                 >
                   {item.replace('-', ' ')}
-                </motion.button>
+                </Motion.button>
               ))}
             </div>
 
@@ -64,7 +64,7 @@ const PortafolioBarbaraBarra = () => {
           </div>
 
           {mobileMenuOpen && (
-            <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="md:hidden pb-4 flex flex-col gap-4">
+            <Motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="md:hidden pb-4 flex flex-col gap-4">
               {['inicio', 'sobre-mi', 'proyectos', 'skills', 'contacto'].map((item) => (
                 <button
                   key={item}
@@ -74,15 +74,15 @@ const PortafolioBarbaraBarra = () => {
                   {item.replace('-', ' ')}
                 </button>
               ))}
-            </motion.div>
+            </Motion.div>
           )}
         </div>
       </nav>
 
       {/* Hero Section */}
       <section id="inicio" className="relative min-h-screen flex items-center justify-center px-4 pt-16">
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="text-center z-10">
-          <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity }} className="flex justify-center mb-8">
+        <Motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="text-center z-10">
+          <Motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity }} className="flex justify-center mb-8">
             <div className="relative w-48 h-48 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-[2px] shadow-2xl shadow-purple-500/50">
              <div className="w-full h-full rounded-full bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
   <img 
@@ -92,9 +92,9 @@ const PortafolioBarbaraBarra = () => {
 />
 </div>
             </div>
-          </motion.div>
+          </Motion.div>
 
-          <motion.div {...fadeInUp} className="mb-8">
+          <Motion.div {...fadeInUp} className="mb-8">
             <h1 className="text-5xl md:text-7xl font-bold mb-4">
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
                 Bárbara Barraza
@@ -107,47 +107,47 @@ const PortafolioBarbaraBarra = () => {
             <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
               Especializada en optimización de procesos, automatización y análisis de datos. Transformo desafíos complejos en soluciones innovadoras.
             </p>
-          </motion.div>
+          </Motion.div>
 
-          <motion.div {...fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.button
+          <Motion.div {...fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(168, 85, 247, 0.6)" }}
               onClick={() => scrollToSection('proyectos')}
               className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:shadow-lg transition-all border border-purple-500/50"
             >
               Ver Proyectos
-            </motion.button>
-            <motion.button
+            </Motion.button>
+            <Motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(34, 211, 238, 0.6)" }}
               onClick={() => scrollToSection('contacto')}
               className="px-8 py-3 bg-transparent rounded-lg font-semibold hover:bg-cyan-900/30 transition-all border border-cyan-500/50"
             >
               Contactame
-            </motion.button>
-          </motion.div>
+            </Motion.button>
+          </Motion.div>
 
-          <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Infinity }} className="mt-16">
+          <Motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Infinity }} className="mt-16">
             <p className="text-gray-500 text-sm mb-2">Desplázate para explorar</p>
             <div className="text-cyan-400 text-2xl">↓</div>
-          </motion.div>
-        </motion.div>
+          </Motion.div>
+        </Motion.div>
       </section>
 
       {/* Sobre mí Section */}
       <section id="sobre-mi" className="relative min-h-screen flex items-center py-20">
         <div className="max-w-6xl mx-auto px-4 w-full">
-          <motion.div {...fadeInUp} className="mb-12">
+          <Motion.div {...fadeInUp} className="mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
                 Sobre Mí
               </span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full" />
-          </motion.div>
+          </Motion.div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Foto */}
-            <motion.div {...fadeInUp} className="flex justify-center">
+            <Motion.div {...fadeInUp} className="flex justify-center">
               <div className="relative w-80 h-96 rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-[3px] shadow-2xl shadow-purple-500/50">
                 <div className="w-full h-full rounded-lg bg-black overflow-hidden">
                   <img 
@@ -157,9 +157,9 @@ const PortafolioBarbaraBarra = () => {
                   />
                 </div>
               </div>
-            </motion.div>
+            </Motion.div>
 
-            <motion.div {...fadeInUp} className="space-y-4 text-gray-300 text-lg leading-relaxed">
+            <Motion.div {...fadeInUp} className="space-y-4 text-gray-300 text-lg leading-relaxed">
               <p>Soy una ingeniera informática apasionada por la tecnología y la optimización de procesos. Mi experiencia se centra en análisis de datos, implementación de soluciones SAP y automatización de flujos de trabajo empresariales.</p>
               <p>Me destaca mi capacidad para entender problemas complejos y diseñar soluciones elegantes que generan impacto real en las organizaciones. Disfruto trabajar en equipo y compartir conocimiento con mis colegas.</p>
 
@@ -180,7 +180,7 @@ const PortafolioBarbaraBarra = () => {
                   <p className="text-gray-400 text-sm">Titulación completada con distinción</p>
                 </div>
               </div>
-            </motion.div>
+            </Motion.div>
           </div>
         </div>
       </section>
@@ -188,18 +188,18 @@ const PortafolioBarbaraBarra = () => {
       {/* Proyectos Section */}
       <section id="proyectos" className="relative min-h-screen flex items-center py-20">
         <div className="max-w-6xl mx-auto px-4 w-full">
-          <motion.div {...fadeInUp} className="mb-12">
+          <Motion.div {...fadeInUp} className="mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
                 Proyectos Destacados
               </span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full" />
-          </motion.div>
+          </Motion.div>
 
-          <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid md:grid-cols-2 gap-8">
+          <Motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid md:grid-cols-2 gap-8">
             {/* Proyecto 1 */}
-            <motion.div variants={fadeInUp} className="p-8 border border-purple-500/30 rounded-lg bg-black hover:border-purple-500/60 transition-all">
+            <Motion.div variants={fadeInUp} className="p-8 border border-purple-500/30 rounded-lg bg-black hover:border-purple-500/60 transition-all">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">SPINTECH</h3>
@@ -221,10 +221,10 @@ const PortafolioBarbaraBarra = () => {
                   💻 Código
                 </a>
               </div>
-            </motion.div>
+            </Motion.div>
 
             {/* Proyecto 2 */}
-            <motion.div variants={fadeInUp} className="p-8 border border-cyan-500/30 rounded-lg bg-black hover:border-cyan-500/60 transition-all">
+            <Motion.div variants={fadeInUp} className="p-8 border border-cyan-500/30 rounded-lg bg-black hover:border-cyan-500/60 transition-all">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">ELECTRO-SPEED STORE</h3>
@@ -246,30 +246,30 @@ const PortafolioBarbaraBarra = () => {
                   💻 Código
                 </a>
               </div>
-            </motion.div>
-          </motion.div>
+            </Motion.div>
+          </Motion.div>
         </div>
       </section>
 
       {/* Skills Section */}
       <section id="skills" className="relative min-h-screen flex items-center py-20">
         <div className="max-w-6xl mx-auto px-4 w-full">
-          <motion.div {...fadeInUp} className="mb-12">
+          <Motion.div {...fadeInUp} className="mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
                 Habilidades & Tecnologías
               </span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full" />
-          </motion.div>
+          </Motion.div>
 
-          <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid md:grid-cols-3 gap-6">
+          <Motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid md:grid-cols-3 gap-6">
             {[
               { title: 'Frontend', skills: ['JavaScript', 'HTML/CSS', 'React', 'Tailwind CSS'], icon: '💻' },
               { title: 'Backend', skills: ['Python', 'Java', 'Node.js', 'REST APIs'], icon: '⚙️' },
               { title: 'Datos & Análisis', skills: ['SQL', 'SAP', 'Data Analysis', 'Business Intelligence'], icon: '📊' }
             ].map((category) => (
-              <motion.div key={category.title} variants={fadeInUp} className="p-6 border border-purple-500/30 rounded-lg bg-purple-900/10 hover:bg-purple-900/20">
+              <Motion.div key={category.title} variants={fadeInUp} className="p-6 border border-purple-500/30 rounded-lg bg-purple-900/10 hover:bg-purple-900/20">
                 <div className="text-4xl mb-4">{category.icon}</div>
                 <h3 className="text-xl font-bold text-white mb-4">{category.title}</h3>
                 <div className="space-y-2">
@@ -280,11 +280,11 @@ const PortafolioBarbaraBarra = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </Motion.div>
             ))}
-          </motion.div>
+          </Motion.div>
 
-          <motion.div {...fadeInUp} className="mt-12 p-8 border border-cyan-500/30 rounded-lg bg-cyan-900/10">
+          <Motion.div {...fadeInUp} className="mt-12 p-8 border border-cyan-500/30 rounded-lg bg-cyan-900/10">
             <h3 className="text-2xl font-bold text-white mb-6">Competencias Blandas</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {['Trabajo en Equipo', 'Comunicación', 'Resolución de Problemas', 'Liderazgo', 
@@ -294,14 +294,14 @@ const PortafolioBarbaraBarra = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
 
       {/* Contacto Section */}
       <section id="contacto" className="relative min-h-screen flex items-center py-20">
         <div className="max-w-4xl mx-auto px-4 w-full text-center">
-          <motion.div {...fadeInUp} className="mb-12">
+          <Motion.div {...fadeInUp} className="mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
                 Hablemos
@@ -311,9 +311,9 @@ const PortafolioBarbaraBarra = () => {
             <p className="text-gray-400 text-lg mt-6">
               ¿Tienes un proyecto o quieres colaborar? Me encantaría escuchar tu propuesta.
             </p>
-          </motion.div>
+          </Motion.div>
 
-          <motion.div {...fadeInUp} className="space-y-4">
+          <Motion.div {...fadeInUp} className="space-y-4">
             <a href="mailto:barbarabarraza3@gmail.com" className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold border border-purple-500/50 hover:shadow-lg">
               ✉️ Enviarme un Email
             </a>
@@ -329,18 +329,18 @@ const PortafolioBarbaraBarra = () => {
                 ✉️
               </a>
             </div>
-          </motion.div>
+          </Motion.div>
 
-          <motion.div {...fadeInUp} className="mt-16 p-8 border border-cyan-500/30 rounded-lg bg-cyan-900/10">
+          <Motion.div {...fadeInUp} className="mt-16 p-8 border border-cyan-500/30 rounded-lg bg-cyan-900/10">
             <p className="text-gray-300 mb-4">¿Necesitas mi CV?</p>
             <a 
-  href="/Currículum Vitae CV Bárbara Barraza.pdf" 
+  href={`${import.meta.env.BASE_URL}Currículum Vitae CV Bárbara Barraza.pdf`} 
   download
   className="inline-block px-6 py-3 bg-cyan-600/20 border border-cyan-500/50 rounded-lg text-cyan-300 hover:bg-cyan-600/40 transition-all font-semibold"
 >
   📥 Descargar CV
 </a>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
 
