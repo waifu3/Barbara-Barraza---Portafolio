@@ -265,9 +265,9 @@ const PortafolioBarbaraBarra = () => {
 
           <Motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid md:grid-cols-3 gap-6">
             {[
-              { title: 'Frontend', skills: ['JavaScript', 'HTML/CSS', 'React', 'Tailwind CSS'], icon: '💻' },
-              { title: 'Backend', skills: ['Python', 'Java', 'Node.js', 'REST APIs'], icon: '⚙️' },
-              { title: 'Datos & Análisis', skills: ['SQL', 'SAP', 'Data Analysis', 'Business Intelligence'], icon: '📊' }
+              { title: 'Frontend', skills: ['JavaScript', 'TypeScript', 'React', 'Tailwind CSS', 'Vite'], icon: '💻' },
+              { title: 'Backend', skills: ['Node.js', 'Express', 'TypeScript', 'REST APIs', 'JWT / Autenticación', 'Python', 'Java'], icon: '⚙️' },
+              { title: 'Datos & Análisis', skills: ['SQL', 'PostgreSQL', 'SAP', 'Excel/XLSX', 'Business Intelligence'], icon: '📊' }
             ].map((category) => (
               <Motion.div key={category.title} variants={fadeInUp} className="p-6 border border-purple-500/30 rounded-lg bg-purple-900/10 hover:bg-purple-900/20">
                 <div className="text-4xl mb-4">{category.icon}</div>
