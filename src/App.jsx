@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import { motion as Motion } from 'framer-motion';
+import {
+  SiJavascript, SiTypescript, SiReact, SiTailwindcss, SiVite,
+  SiNodedotjs, SiExpress, SiJsonwebtokens, SiPostgresql, SiPython, SiSap
+} from 'react-icons/si';
+import { FaJava, FaFileExcel } from 'react-icons/fa';
+import { Database, Webhook, BarChart3 } from 'lucide-react';
 
 const PortafolioBarbaraBarra = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -265,19 +271,53 @@ const PortafolioBarbaraBarra = () => {
 
           <Motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid md:grid-cols-3 gap-6">
             {[
-              { title: 'Frontend', skills: ['JavaScript', 'TypeScript', 'React', 'Tailwind CSS', 'Vite'], icon: '💻' },
-              { title: 'Backend', skills: ['Node.js', 'Express', 'TypeScript', 'REST APIs', 'JWT / Autenticación', 'Python', 'Java'], icon: '⚙️' },
-              { title: 'Datos & Análisis', skills: ['SQL', 'PostgreSQL', 'SAP', 'Excel/XLSX', 'Business Intelligence'], icon: '📊' }
+              {
+                title: 'Frontend', icon: '💻',
+                skills: [
+                  { name: 'JavaScript', Icon: SiJavascript, color: '#F7DF1E' },
+                  { name: 'TypeScript', Icon: SiTypescript, color: '#3178C6' },
+                  { name: 'React', Icon: SiReact, color: '#61DAFB' },
+                  { name: 'Tailwind CSS', Icon: SiTailwindcss, color: '#38BDF8' },
+                  { name: 'Vite', Icon: SiVite, color: '#A78BFA' },
+                ]
+              },
+              {
+                title: 'Backend', icon: '⚙️',
+                skills: [
+                  { name: 'Node.js', Icon: SiNodedotjs, color: '#3C873A' },
+                  { name: 'Express', Icon: SiExpress, color: '#E4E4E7' },
+                  { name: 'REST APIs', Icon: Webhook, color: '#22D3EE' },
+                  { name: 'JWT / Autenticación', Icon: SiJsonwebtokens, color: '#FB7185' },
+                  { name: 'Python', Icon: SiPython, color: '#60A5FA' },
+                  { name: 'Java', Icon: FaJava, color: '#F89820' },
+                ]
+              },
+              {
+                title: 'Datos & Análisis', icon: '📊',
+                skills: [
+                  { name: 'SQL', Icon: Database, color: '#D1D5DB' },
+                  { name: 'PostgreSQL', Icon: SiPostgresql, color: '#4A90D9' },
+                  { name: 'SAP', Icon: SiSap, color: '#38BDF8' },
+                  { name: 'Excel/XLSX', Icon: FaFileExcel, color: '#22C55E' },
+                  { name: 'Business Intelligence', Icon: BarChart3, color: '#C084FC' },
+                ]
+              }
             ].map((category) => (
               <Motion.div key={category.title} variants={fadeInUp} className="p-6 border border-purple-500/30 rounded-lg bg-purple-900/10 hover:bg-purple-900/20">
                 <div className="text-4xl mb-4">{category.icon}</div>
                 <h3 className="text-xl font-bold text-white mb-4">{category.title}</h3>
-                <div className="space-y-2">
-                  {category.skills.map((skill) => (
-                    <div key={skill} className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full" />
-                      <span className="text-gray-300">{skill}</span>
-                    </div>
+                <div className="flex flex-wrap gap-3">
+                  {category.skills.map(({ name, Icon, color }, i) => (
+                    <Motion.div
+                      key={name}
+                      className="flex items-center gap-2 px-3 py-2 rounded-full bg-black/40 border border-white/10"
+                      animate={{ y: [0, -6, 0] }}
+                      transition={{ duration: 2.4 + (i % 3) * 0.4, repeat: Infinity, ease: 'easeInOut', delay: i * 0.15 }}
+                      whileHover={{ scale: 1.15, rotate: -4, borderColor: color, boxShadow: `0 0 16px ${color}80` }}
+                    >
+                      <Icon size={20} color={color} />
+                      <span className="text-gray-300 text-sm whitespace-nowrap">{name}</span>
+                    </Motion.div>
                   ))}
                 </div>
               </Motion.div>
