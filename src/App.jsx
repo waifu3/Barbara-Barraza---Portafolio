@@ -206,56 +206,78 @@ const PortafolioBarbaraBarra = () => {
             <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full" />
           </Motion.div>
 
-          <Motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid md:grid-cols-2 gap-8">
-            {/* Proyecto 1 */}
-            <Motion.div variants={fadeInUp} className="p-8 border border-purple-500/30 rounded-lg bg-black hover:border-purple-500/60 transition-all">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">SPINTECH</h3>
-                  <p className="text-gray-400 text-sm">Plataforma Educativa Inclusiva</p>
-                </div>
-                <span className="px-3 py-1 bg-purple-900/50 rounded-full text-purple-300 text-xs">Fullstack + BD</span>
-              </div>
-              <p className="text-gray-300 mb-6">
-                Plataforma educativa con autenticación, gestión de cursos, recursos multimedia, certificados y accesibilidad para personas con discapacidades.
-              </p>
-              <div className="mb-6">
-                <p className="text-gray-400 text-sm font-semibold mb-3">Stack: PHP, MySQL, JavaScript, HTML/CSS</p>
-              </div>
-              <div className="flex gap-4">
-                <a href="https://github.com/waifu3/proyecto-spintech" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-purple-600/20 border border-purple-500/50 rounded-lg text-purple-300 hover:bg-purple-600/40 transition-all text-sm">
-                  📁 Ver Repositorio
-                </a>
-                <a href="https://github.com/waifu3/proyecto-spintech" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-cyan-600/20 border border-cyan-500/50 rounded-lg text-cyan-300 hover:bg-cyan-600/40 transition-all text-sm">
-                  💻 Código
-                </a>
-              </div>
-            </Motion.div>
+          <Motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'SAP DASHBOARD',
+                subtitle: 'Panel Ejecutivo SAP Business One',
+                tag: 'Fullstack + Real-time',
+                accent: 'purple',
+                image: 'sap-dashboard.webp',
+                desc: 'Dashboard ejecutivo con KPIs de ventas, inventario y finanzas en tiempo real, alertas de stock y exportación a PDF/Excel, conectado a SAP B1 vía API intermedia.',
+                stack: 'React, Express, WebSockets, Recharts, Tailwind',
+                repo: 'https://github.com/waifu3/SAP-dashboard',
+              },
+              {
+                name: 'SPINTECH',
+                subtitle: 'Plataforma Educativa Inclusiva',
+                tag: 'Fullstack + BD',
+                accent: 'cyan',
+                image: null,
+                desc: 'Plataforma educativa con autenticación, gestión de cursos, recursos multimedia, certificados y accesibilidad para personas con discapacidades.',
+                stack: 'PHP, MySQL, JavaScript, HTML/CSS',
+                repo: 'https://github.com/waifu3/proyecto-spintech',
+              },
+              {
+                name: 'ELECTRO-SPEED STORE',
+                subtitle: 'Tienda E-commerce',
+                tag: 'Frontend + API',
+                accent: 'pink',
+                image: null,
+                desc: 'Tienda online con integración Stripe, carrito dinámico, gestión de productos y procesamiento de transacciones en tiempo real.',
+                stack: 'JavaScript, Stripe API, HTML/CSS',
+                repo: 'https://github.com/waifu3/Electro-Speed-Store',
+              },
+            ].map((project) => {
+              const accents = {
+                purple: { border: 'border-purple-500/30 hover:border-purple-500/60', tag: 'bg-purple-900/50 text-purple-300', btn: 'bg-purple-600/20 border-purple-500/50 text-purple-300 hover:bg-purple-600/40' },
+                cyan: { border: 'border-cyan-500/30 hover:border-cyan-500/60', tag: 'bg-cyan-900/50 text-cyan-300', btn: 'bg-cyan-600/20 border-cyan-500/50 text-cyan-300 hover:bg-cyan-600/40' },
+                pink: { border: 'border-pink-500/30 hover:border-pink-500/60', tag: 'bg-pink-900/50 text-pink-300', btn: 'bg-pink-600/20 border-pink-500/50 text-pink-300 hover:bg-pink-600/40' },
+              }[project.accent];
 
-            {/* Proyecto 2 */}
-            <Motion.div variants={fadeInUp} className="p-8 border border-cyan-500/30 rounded-lg bg-black hover:border-cyan-500/60 transition-all">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">ELECTRO-SPEED STORE</h3>
-                  <p className="text-gray-400 text-sm">Tienda E-commerce</p>
-                </div>
-                <span className="px-3 py-1 bg-cyan-900/50 rounded-full text-cyan-300 text-xs">Frontend + API</span>
-              </div>
-              <p className="text-gray-300 mb-6">
-                Tienda online con integración Stripe, carrito dinámico, gestión de productos y procesamiento de transacciones en tiempo real.
-              </p>
-              <div className="mb-6">
-                <p className="text-gray-400 text-sm font-semibold mb-3">Stack: JavaScript, Stripe API, HTML/CSS</p>
-              </div>
-              <div className="flex gap-4">
-                <a href="https://github.com/waifu3/Electro-Speed-Store" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-cyan-600/20 border border-cyan-500/50 rounded-lg text-cyan-300 hover:bg-cyan-600/40 transition-all text-sm">
-                  📁 Ver Repositorio
-                </a>
-                <a href="https://github.com/waifu3/Electro-Speed-Store" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-purple-600/20 border border-purple-500/50 rounded-lg text-purple-300 hover:bg-purple-600/40 transition-all text-sm">
-                  💻 Código
-                </a>
-              </div>
-            </Motion.div>
+              return (
+                <Motion.div key={project.name} variants={fadeInUp} className={`rounded-lg bg-black border ${accents.border} transition-all overflow-hidden flex flex-col`}>
+                  {project.image && (
+                    <img
+                      src={new URL(`./assets/${project.image}`, import.meta.url).href}
+                      alt={`Captura de ${project.name}`}
+                      className="w-full aspect-video object-cover object-top"
+                    />
+                  )}
+                  <div className="p-8 flex flex-col flex-1">
+                    <div className="flex items-start justify-between mb-4 gap-2">
+                      <div>
+                        <h3 className="text-2xl font-bold text-white mb-2">{project.name}</h3>
+                        <p className="text-gray-400 text-sm">{project.subtitle}</p>
+                      </div>
+                      <span className={`shrink-0 px-3 py-1 rounded-full text-xs whitespace-nowrap ${accents.tag}`}>{project.tag}</span>
+                    </div>
+                    <p className="text-gray-300 mb-6">{project.desc}</p>
+                    <div className="mb-6 mt-auto">
+                      <p className="text-gray-400 text-sm font-semibold mb-3">Stack: {project.stack}</p>
+                    </div>
+                    <div className="flex gap-4">
+                      <a href={project.repo} target="_blank" rel="noopener noreferrer" className={`px-4 py-2 border rounded-lg transition-all text-sm ${accents.btn}`}>
+                        📁 Ver Repositorio
+                      </a>
+                      <a href={project.repo} target="_blank" rel="noopener noreferrer" className={`px-4 py-2 border rounded-lg transition-all text-sm ${accents.btn}`}>
+                        💻 Código
+                      </a>
+                    </div>
+                  </div>
+                </Motion.div>
+              );
+            })}
           </Motion.div>
         </div>
       </section>
