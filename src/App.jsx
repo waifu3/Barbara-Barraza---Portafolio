@@ -5,7 +5,10 @@ import {
   SiNodedotjs, SiExpress, SiJsonwebtokens, SiPostgresql, SiPython, SiSap
 } from 'react-icons/si';
 import { FaJava, FaFileExcel } from 'react-icons/fa';
-import { Database, Webhook, BarChart3 } from 'lucide-react';
+import {
+  Database, Webhook, BarChart3, Users, MessagesSquare, Lightbulb,
+  Crown, Brain, Repeat2, Rocket, ClipboardList
+} from 'lucide-react';
 
 const PortafolioBarbaraBarra = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -325,15 +328,40 @@ const PortafolioBarbaraBarra = () => {
           </Motion.div>
 
           <Motion.div {...fadeInUp} className="mt-12 p-8 border border-cyan-500/30 rounded-lg bg-cyan-900/10">
-            <h3 className="text-2xl font-bold text-white mb-6">Competencias Blandas</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {['Trabajo en Equipo', 'Comunicación', 'Resolución de Problemas', 'Liderazgo', 
-                'Pensamiento Analítico', 'Adaptabilidad', 'Proactividad', 'Gestión de Proyectos'].map((skill) => (
-                <div key={skill} className="p-3 bg-black rounded-lg border border-cyan-500/20 text-center text-gray-300 text-sm">
-                  {skill}
-                </div>
+            <h3 className="text-2xl font-bold text-white mb-2">Competencias Blandas</h3>
+            <p className="text-gray-400 text-sm mb-8">Lo que aporto en cada equipo, más allá del código</p>
+            <Motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {[
+                { name: 'Trabajo en Equipo', desc: 'Colaboro con foco en objetivos comunes', Icon: Users, color: '#a855f7' },
+                { name: 'Comunicación', desc: 'Ideas complejas explicadas con claridad', Icon: MessagesSquare, color: '#22d3ee' },
+                { name: 'Resolución de Problemas', desc: 'Soluciones creativas ante desafíos', Icon: Lightbulb, color: '#ec4899' },
+                { name: 'Liderazgo', desc: 'Guío equipos hacia metas compartidas', Icon: Crown, color: '#a855f7' },
+                { name: 'Pensamiento Analítico', desc: 'Datos y contexto para decidir mejor', Icon: Brain, color: '#22d3ee' },
+                { name: 'Adaptabilidad', desc: 'Me ajusto rápido a nuevos escenarios', Icon: Repeat2, color: '#ec4899' },
+                { name: 'Proactividad', desc: 'Anticipo necesidades y tomo la iniciativa', Icon: Rocket, color: '#a855f7' },
+                { name: 'Gestión de Proyectos', desc: 'Planifico y coordino hasta el resultado', Icon: ClipboardList, color: '#22d3ee' },
+              ].map(({ name, desc, Icon, color }, i) => (
+                <Motion.div
+                  key={name}
+                  variants={fadeInUp}
+                  whileHover={{ y: -8, borderColor: color, boxShadow: `0 12px 30px -12px ${color}90` }}
+                  className="relative p-5 rounded-xl bg-black border border-white/10 overflow-hidden"
+                >
+                  <Motion.div
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: i * 0.2 }}
+                    className="w-12 h-12 rounded-full p-[2px] mb-4"
+                    style={{ background: `linear-gradient(135deg, ${color}, transparent)` }}
+                  >
+                    <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
+                      <Icon size={22} color={color} />
+                    </div>
+                  </Motion.div>
+                  <h4 className="text-white font-semibold mb-1">{name}</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
+                </Motion.div>
               ))}
-            </div>
+            </Motion.div>
           </Motion.div>
         </div>
       </section>
