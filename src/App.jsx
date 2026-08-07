@@ -4,10 +4,10 @@ import {
   SiJavascript, SiTypescript, SiReact, SiTailwindcss, SiVite,
   SiNodedotjs, SiExpress, SiJsonwebtokens, SiPostgresql, SiPython, SiSap
 } from 'react-icons/si';
-import { FaJava, FaFileExcel } from 'react-icons/fa';
+import { FaJava, FaFileExcel, FaGithub, FaLinkedin } from 'react-icons/fa';
 import {
   Database, Webhook, BarChart3, Users, MessagesSquare, Lightbulb,
-  Crown, Brain, Repeat2, Rocket, ClipboardList
+  Crown, Brain, Repeat2, Rocket, ClipboardList, Mail, Download
 } from 'lucide-react';
 
 const PortafolioBarbaraBarra = () => {
@@ -45,9 +45,9 @@ const PortafolioBarbaraBarra = () => {
           <Motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-3">
   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 p-[2px] flex items-center justify-center shadow-lg shadow-purple-500/50">
     <div className="w-full h-full rounded-full bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
-  <img 
-    src={new URL('./assets/logo3.svg', import.meta.url).href}
-    alt="Logo" 
+  <img
+    src={new URL('./assets/logo.webp', import.meta.url).href}
+    alt="Logo"
     className="w-10 h-10 object-contain"
   />
 </div>
@@ -94,9 +94,9 @@ const PortafolioBarbaraBarra = () => {
           <Motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity }} className="flex justify-center mb-8">
             <div className="relative w-48 h-48 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-[2px] shadow-2xl shadow-purple-500/50">
              <div className="w-full h-full rounded-full bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
-  <img 
-  src={new URL('./assets/logo3.svg', import.meta.url).href}
-  alt="Logo" 
+  <img
+  src={new URL('./assets/logo.webp', import.meta.url).href}
+  alt="Logo"
   className="w-full h-full object-contain p-4"
 />
 </div>
@@ -159,9 +159,9 @@ const PortafolioBarbaraBarra = () => {
             <Motion.div {...fadeInUp} className="flex justify-center">
               <div className="relative w-80 h-96 rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-[3px] shadow-2xl shadow-purple-500/50">
                 <div className="w-full h-full rounded-lg bg-black overflow-hidden">
-                  <img 
-                    src={new URL('./assets/barbara.png', import.meta.url).href}
-                    alt="Bárbara Barraza" 
+                  <img
+                    src={new URL('./assets/barbara.webp', import.meta.url).href}
+                    alt="Bárbara Barraza"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -383,30 +383,30 @@ const PortafolioBarbaraBarra = () => {
 
           <Motion.div {...fadeInUp} className="space-y-4">
             <a href="mailto:barbarabarraza3@gmail.com" className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold border border-purple-500/50 hover:shadow-lg">
-              ✉️ Enviarme un Email
+              <Mail size={20} /> Enviarme un Email
             </a>
 
             <div className="flex justify-center gap-6 pt-8">
-              <a href="https://github.com/waifu3" className="w-12 h-12 flex items-center justify-center rounded-full border border-purple-500/50 text-purple-400 hover:bg-purple-600/20 transition-all">
-                💻
+              <a href="https://github.com/waifu3" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="w-12 h-12 flex items-center justify-center rounded-full border border-purple-500/50 text-purple-400 hover:bg-purple-600/20 transition-all">
+                <FaGithub size={20} />
               </a>
-              <a href="https://www.linkedin.com/in/barbara-barraza-cabrera-092772222" className="w-12 h-12 flex items-center justify-center rounded-full border border-cyan-500/50 text-cyan-400 hover:bg-cyan-600/20 transition-all">
-                💼
+              <a href="https://www.linkedin.com/in/barbara-barraza-cabrera-092772222" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-12 h-12 flex items-center justify-center rounded-full border border-cyan-500/50 text-cyan-400 hover:bg-cyan-600/20 transition-all">
+                <FaLinkedin size={20} />
               </a>
-              <a href="mailto:barbarabarraza3@gmail.com" className="w-12 h-12 flex items-center justify-center rounded-full border border-pink-500/50 text-pink-400 hover:bg-pink-600/20 transition-all">
-                ✉️
+              <a href="mailto:barbarabarraza3@gmail.com" aria-label="Email" className="w-12 h-12 flex items-center justify-center rounded-full border border-pink-500/50 text-pink-400 hover:bg-pink-600/20 transition-all">
+                <Mail size={20} />
               </a>
             </div>
           </Motion.div>
 
           <Motion.div {...fadeInUp} className="mt-16 p-8 border border-cyan-500/30 rounded-lg bg-cyan-900/10">
             <p className="text-gray-300 mb-4">¿Necesitas mi CV?</p>
-            <a 
-  href={`${import.meta.env.BASE_URL}Currículum Vitae CV Bárbara Barraza.pdf`} 
+            <a
+  href={`${import.meta.env.BASE_URL}Currículum Vitae CV Bárbara Barraza.pdf`}
   download
-  className="inline-block px-6 py-3 bg-cyan-600/20 border border-cyan-500/50 rounded-lg text-cyan-300 hover:bg-cyan-600/40 transition-all font-semibold"
+  className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-600/20 border border-cyan-500/50 rounded-lg text-cyan-300 hover:bg-cyan-600/40 transition-all font-semibold"
 >
-  📥 Descargar CV
+  <Download size={18} /> Descargar CV
 </a>
           </Motion.div>
         </div>
