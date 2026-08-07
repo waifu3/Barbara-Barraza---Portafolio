@@ -219,6 +219,36 @@ const PortafolioBarbaraBarra = () => {
                 repo: 'https://github.com/waifu3/SAP-dashboard',
               },
               {
+                name: 'VETSALUD',
+                subtitle: 'Plataforma Veterinaria Full-Stack',
+                tag: 'Fullstack + Auth',
+                accent: 'cyan',
+                image: 'vetsalud.webp',
+                desc: 'Plataforma para clínica veterinaria con agendamiento de citas, historial clínico y recordatorios, sobre una API REST propia con autenticación JWT y PostgreSQL.',
+                stack: 'React, TypeScript, Express, PostgreSQL, JWT',
+                repo: null,
+              },
+              {
+                name: 'COMMUNITY PLATFORM',
+                subtitle: 'Red Social para Comunidades de Nicho',
+                tag: 'Fullstack + Real-time',
+                accent: 'pink',
+                image: null,
+                desc: 'Plataforma social con feed en modos recent/liked/trending, notificaciones en vivo por WebSockets y caché de ranking con Redis.',
+                stack: 'Next.js, TypeScript, Prisma, PostgreSQL, Redis, Socket.IO',
+                repo: 'https://github.com/waifu3/community-platform',
+              },
+              {
+                name: 'FORTTHEGAMES',
+                subtitle: 'Tienda de Videojuegos y Pagos',
+                tag: 'Fullstack .NET',
+                accent: 'purple',
+                image: 'fortthegames.webp',
+                desc: 'Tienda de consolas, juegos y accesorios con catálogo filtrable por categoría, cuentas de usuario y pasarela de pagos.',
+                stack: 'C#, ASP.NET Core MVC, Entity Framework, SQL Server',
+                repo: 'https://github.com/waifu3/FORTTHEGAMES.github.io',
+              },
+              {
                 name: 'SPINTECH',
                 subtitle: 'Plataforma Educativa Inclusiva',
                 tag: 'Fullstack + BD',
@@ -229,10 +259,20 @@ const PortafolioBarbaraBarra = () => {
                 repo: 'https://github.com/waifu3/proyecto-spintech',
               },
               {
+                name: 'DOG API PROJECT',
+                subtitle: 'Explorador de Razas de Perros',
+                tag: 'Frontend + API',
+                accent: 'pink',
+                image: 'dog-api.webp',
+                desc: 'Consume la API pública de Dog CEO para explorar razas y subrazas, guardar favoritos, ver historial de imágenes y modo oscuro.',
+                stack: 'Node.js, Express, JavaScript',
+                repo: 'https://github.com/waifu3/dog-api-project-main',
+              },
+              {
                 name: 'ELECTRO-SPEED STORE',
                 subtitle: 'Tienda E-commerce',
                 tag: 'Frontend + API',
-                accent: 'pink',
+                accent: 'purple',
                 image: null,
                 desc: 'Tienda online con integración Stripe, carrito dinámico, gestión de productos y procesamiento de transacciones en tiempo real.',
                 stack: 'JavaScript, Stripe API, HTML/CSS',
@@ -266,18 +306,57 @@ const PortafolioBarbaraBarra = () => {
                     <div className="mb-6 mt-auto">
                       <p className="text-gray-400 text-sm font-semibold mb-3">Stack: {project.stack}</p>
                     </div>
-                    <div className="flex gap-4">
-                      <a href={project.repo} target="_blank" rel="noopener noreferrer" className={`px-4 py-2 border rounded-lg transition-all text-sm ${accents.btn}`}>
-                        📁 Ver Repositorio
-                      </a>
-                      <a href={project.repo} target="_blank" rel="noopener noreferrer" className={`px-4 py-2 border rounded-lg transition-all text-sm ${accents.btn}`}>
-                        💻 Código
-                      </a>
-                    </div>
+                    {project.repo ? (
+                      <div className="flex gap-4">
+                        <a href={project.repo} target="_blank" rel="noopener noreferrer" className={`px-4 py-2 border rounded-lg transition-all text-sm ${accents.btn}`}>
+                          📁 Ver Repositorio
+                        </a>
+                        <a href={project.repo} target="_blank" rel="noopener noreferrer" className={`px-4 py-2 border rounded-lg transition-all text-sm ${accents.btn}`}>
+                          💻 Código
+                        </a>
+                      </div>
+                    ) : (
+                      <p className="text-gray-600 text-xs italic">Código privado</p>
+                    )}
                   </div>
                 </Motion.div>
               );
             })}
+          </Motion.div>
+
+          {/* Otros proyectos */}
+          <Motion.div {...fadeInUp} className="mt-20 mb-8">
+            <h3 className="text-2xl font-bold text-white mb-2">Otros Proyectos</h3>
+            <p className="text-gray-400 text-sm">Sitios estáticos para clientes y marca propia</p>
+          </Motion.div>
+
+          <Motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+            {[
+              { name: 'BB Data & Tech', subtitle: 'Mi sitio de negocio freelance', image: 'bb-data-tech.webp', repo: null },
+              { name: 'RegistrAPP', subtitle: 'Landing app de asistencia QR', image: 'registrapp.webp', repo: 'https://github.com/waifu3/Pag_registraApp' },
+              { name: 'Alex Villalón Electricidad', subtitle: 'Sitio para empresa eléctrica', image: 'alex-villalon-electricidad.webp', repo: null },
+              { name: 'Electro Speed', subtitle: 'Servicios eléctricos integrales', image: 'electro-speed.webp', repo: null },
+              { name: 'Alex Villalón', subtitle: 'Escritor, músico y podcaster', image: 'alex-villalon-personal.webp', repo: null },
+            ].map((project) => (
+              <Motion.div key={project.name} variants={fadeInUp} className="rounded-lg bg-black border border-white/10 hover:border-cyan-500/40 transition-all overflow-hidden group">
+                <img
+                  src={new URL(`./assets/${project.image}`, import.meta.url).href}
+                  alt={`Captura de ${project.name}`}
+                  className="w-full aspect-video object-cover object-top"
+                />
+                <div className="p-4">
+                  <h4 className="text-white font-semibold text-sm mb-1">{project.name}</h4>
+                  <p className="text-gray-500 text-xs mb-3">{project.subtitle}</p>
+                  {project.repo ? (
+                    <a href={project.repo} target="_blank" rel="noopener noreferrer" className="text-cyan-400 text-xs hover:text-cyan-300 transition-all">
+                      📁 Ver Repositorio
+                    </a>
+                  ) : (
+                    <p className="text-gray-600 text-xs italic">Código privado</p>
+                  )}
+                </div>
+              </Motion.div>
+            ))}
           </Motion.div>
         </div>
       </section>
