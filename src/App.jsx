@@ -89,7 +89,7 @@ const PortafolioBarbaraBarra = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-screen flex items-center justify-center px-4 pt-16">
+      <section id="inicio" className="relative min-h-[85vh] flex items-center justify-center px-4 pt-16 pb-20">
         <Motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="text-center z-10">
           <Motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity }} className="flex justify-center mb-8">
             <div className="relative w-48 h-48 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-[2px] shadow-2xl shadow-purple-500/50">
@@ -143,7 +143,7 @@ const PortafolioBarbaraBarra = () => {
       </section>
 
       {/* Sobre mí Section */}
-      <section id="sobre-mi" className="relative min-h-screen flex items-center py-20">
+      <section id="sobre-mi" className="relative flex items-center py-24">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <Motion.div {...fadeInUp} className="mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -195,7 +195,7 @@ const PortafolioBarbaraBarra = () => {
       </section>
 
       {/* Proyectos Section */}
-      <section id="proyectos" className="relative min-h-screen flex items-center py-20">
+      <section id="proyectos" className="relative flex items-center py-24">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <Motion.div {...fadeInUp} className="mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -261,7 +261,7 @@ const PortafolioBarbaraBarra = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="relative min-h-screen flex items-center py-20">
+      <section id="skills" className="relative flex items-center py-24">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <Motion.div {...fadeInUp} className="mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -367,7 +367,7 @@ const PortafolioBarbaraBarra = () => {
       </section>
 
       {/* Contacto Section */}
-      <section id="contacto" className="relative min-h-screen flex items-center py-20">
+      <section id="contacto" className="relative flex items-center py-24">
         <div className="max-w-4xl mx-auto px-4 w-full text-center">
           <Motion.div {...fadeInUp} className="mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
