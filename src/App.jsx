@@ -97,7 +97,7 @@ const PortafolioBarbaraBarra = () => {
   <img
   src={new URL('./assets/logo.webp', import.meta.url).href}
   alt="Logo"
-  className="w-full h-full object-contain p-4"
+  className="w-full h-full object-contain"
 />
 </div>
             </div>
