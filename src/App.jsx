@@ -7,7 +7,8 @@ import {
 import { FaJava, FaFileExcel, FaGithub, FaLinkedin } from 'react-icons/fa';
 import {
   Database, Webhook, BarChart3, Users, MessagesSquare, Lightbulb,
-  Crown, Brain, Repeat2, Rocket, ClipboardList, Mail, Download
+  Crown, Brain, Repeat2, Rocket, ClipboardList, Mail, Download,
+  Briefcase, MapPin
 } from 'lucide-react';
 
 const PortafolioBarbaraBarra = () => {
@@ -55,7 +56,7 @@ const PortafolioBarbaraBarra = () => {
 </Motion.div>
 
             <div className="hidden md:flex gap-8">
-              {['inicio', 'sobre-mi', 'proyectos', 'skills', 'contacto'].map((item) => (
+              {['inicio', 'sobre-mi', 'experiencia', 'proyectos', 'skills', 'contacto'].map((item) => (
                 <Motion.button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -74,7 +75,7 @@ const PortafolioBarbaraBarra = () => {
 
           {mobileMenuOpen && (
             <Motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="md:hidden pb-4 flex flex-col gap-4">
-              {['inicio', 'sobre-mi', 'proyectos', 'skills', 'contacto'].map((item) => (
+              {['inicio', 'sobre-mi', 'experiencia', 'proyectos', 'skills', 'contacto'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -191,6 +192,105 @@ const PortafolioBarbaraBarra = () => {
               </div>
             </Motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Experiencia Laboral Section */}
+      <section id="experiencia" className="relative flex items-center py-24">
+        <div className="max-w-4xl mx-auto px-4 w-full">
+          <Motion.div {...fadeInUp} className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                Experiencia Laboral
+              </span>
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full" />
+          </Motion.div>
+
+          <Motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="relative">
+            <div className="absolute left-[15px] top-2 bottom-2 w-px bg-gradient-to-b from-purple-500 via-cyan-500 to-pink-500" />
+
+            {[
+              {
+                role: 'Analista de Datos y Soporte SAP',
+                company: 'Euro Plant',
+                period: 'Feb 2025 — Actualidad',
+                location: 'Hijuelas, Región de Valparaíso · Presencial',
+                accent: 'purple',
+                bullets: [
+                  'Administro SAP Business One on HANA como superusuario para las distintas entidades del holding agrícola.',
+                  'Desarrollo y optimizo consultas SQL sobre HANA (Ventas e Inventario/Compras) para reportes diarios de finanzas, logística y ventas.',
+                  'Diseño herramientas internas para automatizar procesos y reducir tareas manuales del equipo.',
+                  'Lidero informalmente al equipo de sistemas durante ausencias de mi jefe directo.',
+                ],
+              },
+              {
+                role: 'Soporte y QA',
+                company: 'VASS LATAM',
+                period: 'Mar 2023 — May 2023',
+                location: 'Remoto',
+                accent: 'cyan',
+                bullets: [
+                  'Ejecuté pruebas de calidad funcionales y de caja negra sobre plataformas web antes de producción.',
+                  'Documenté bugs y colaboré con el equipo de desarrollo bajo metodologías ágiles (Scrum/Kanban).',
+                  'Brindé soporte técnico y actualicé contenido en Modyo, resolviendo incidencias de clientes.',
+                ],
+              },
+              {
+                role: 'Especialista en Soporte (Práctica)',
+                company: 'VASS LATAM',
+                period: 'Ene 2023 — Feb 2023',
+                location: 'Providencia, Santiago',
+                accent: 'pink',
+                bullets: [
+                  'Asistencia técnica a clientes y actualización de contenido en páginas web.',
+                  'Documentación de incidencias y soluciones, mejorando la eficiencia del equipo de soporte.',
+                ],
+              },
+              {
+                role: 'Especialista en Electrónica (Práctica)',
+                company: 'SOLDESP S.A.',
+                period: 'Ene 2018 — Feb 2018',
+                location: 'La Calera, Chile · Presencial',
+                accent: 'purple',
+                bullets: [
+                  'Apoyé en diagnóstico y reparación de equipos electrónicos.',
+                  'Diseñé y prototipé circuitos con herramientas CAD junto a ingenieros experimentados.',
+                ],
+              },
+            ].map((exp, i, arr) => {
+              const accents = {
+                purple: { dot: 'bg-purple-500 shadow-purple-500/50', border: 'border-purple-500/30 hover:border-purple-500/60', text: 'text-purple-300' },
+                cyan: { dot: 'bg-cyan-500 shadow-cyan-500/50', border: 'border-cyan-500/30 hover:border-cyan-500/60', text: 'text-cyan-300' },
+                pink: { dot: 'bg-pink-500 shadow-pink-500/50', border: 'border-pink-500/30 hover:border-pink-500/60', text: 'text-pink-300' },
+              }[exp.accent];
+
+              return (
+                <Motion.div key={exp.role + exp.period} variants={fadeInUp} className={`relative pl-10 ${i === arr.length - 1 ? '' : 'mb-8'}`}>
+                  <div className={`absolute left-0 top-2 w-[31px] h-[31px] rounded-full ${accents.dot} shadow-lg flex items-center justify-center`}>
+                    <Briefcase size={15} className="text-black" />
+                  </div>
+                  <div className={`p-6 rounded-lg bg-black border ${accents.border} transition-all`}>
+                    <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
+                      <h3 className="text-lg font-bold text-white">{exp.role}</h3>
+                      <span className="text-gray-500 text-xs whitespace-nowrap">{exp.period}</span>
+                    </div>
+                    <p className={`font-semibold mb-1 ${accents.text}`}>{exp.company}</p>
+                    <p className="flex items-center gap-1 text-gray-500 text-xs mb-4">
+                      <MapPin size={12} /> {exp.location}
+                    </p>
+                    <ul className="space-y-2">
+                      {exp.bullets.map((b) => (
+                        <li key={b} className="text-gray-300 text-sm leading-relaxed flex gap-2">
+                          <span className={accents.text}>▸</span> {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Motion.div>
+              );
+            })}
+          </Motion.div>
         </div>
       </section>
 
