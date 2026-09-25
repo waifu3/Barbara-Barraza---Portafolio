@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion as Motion } from 'framer-motion';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import {
   SiJavascript, SiTypescript, SiReact, SiTailwindcss, SiVite,
   SiNodedotjs, SiExpress, SiJsonwebtokens, SiPostgresql, SiPython, SiSap
@@ -616,6 +617,7 @@ const PortafolioBarbaraBarra = () => {
       <footer className="border-t border-purple-500/20 py-8 px-4 text-center text-gray-500 text-sm">
         <p>© 2026 Bárbara Barraza. Diseñado y desarrollado con ✨ React + Tailwind + Framer Motion.</p>
       </footer>
+      <SpeedInsights />
     </div>
   );
 };
